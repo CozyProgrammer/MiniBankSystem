@@ -1,4 +1,5 @@
 # Cozy_demo
-My first Git Repository.
+My Mini Bank System 
+
 <br>
 Author : Hassan Javed
