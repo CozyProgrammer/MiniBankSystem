@@ -1,4 +1,4 @@
-# Cozy_demo
+# CozyProgrammer
 My Mini Bank System 
 
 <br>
