@@ -17,7 +17,7 @@ public class Customer {
         return customerName;
     }
 
-    public String getemail(){
+    public String getECmail(){
         return  email;
     }
 
