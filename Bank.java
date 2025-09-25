@@ -22,9 +22,12 @@ public class Bank{
 
        while(True){
          int n=sc.nextInt();
+         sc.nextLine();
 
          switch(n){
-            case 1:{ System.out.println("So you wanna create an a new account");
+            case 1:
+            { 
+             System.out.println("So you wanna create an a new account");
              System.out.println("Enter Your Name :");
              String name=sc.nextLine();
 
@@ -36,11 +39,9 @@ public class Bank{
              int accNo=r.nextInt(100000,250000);
 
              System.out.println("Enter Amount you want to add in Account (Minimum Rs.1000) :");
-             double balance=sc.nextDouble();
 
-             boolean T=true;
-
-       while (T){
+       while (true){
+         double balance=sc.nextDouble();
           if(balance>=1000){
              Account account=new Account(accNo, balance, customer);
              break;
@@ -49,8 +50,38 @@ public class Bank{
              System.out.println("Please Enter Minimum Amount At least");
           }
         }
+
+        System.out.println("You have created your Account ");
+      }
+      break;
+      case 2:
+      {
+
+      }
+      break;
+      case 3:
+      {
+
+      }
+      break;
+      case 4:
+      {
+
+      }
+      break;
+      case 5:
+      {
+         System.out.println("You are Exiting ....");
+         True=false;
+         sc.close();
+
+      }
+      break;
+      default:
+      {
+         System.out.println("Please Enter Valid Choice");
       }
     }
-   }     
+   }    
  }
 }
