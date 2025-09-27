@@ -42,6 +42,9 @@ public class Bank{
             double balance=sc.nextDouble();
             if(balance>=1000){
              Account account=new Account(accNo, balance, customer);
+             info.put(accNo,account);
+             System.out.println("You have created your Account ");
+             System.out.println("Your account Number is: " + accNo);
              break;
        }
              else {
@@ -49,8 +52,6 @@ public class Bank{
              }
              }
 
-             info.
-             System.out.println("You have created your Account ");
       }
       
       else if(n==2){
