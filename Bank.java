@@ -11,16 +11,17 @@ public class Bank{
 
        System.out.println("Hello and Welcome");
 
-       System.out.println("Please Choose One Of the Following Options :");
-       System.out.println("1.Create Account ");
-       System.out.println("2.Deposit");
-       System.out.println("3.Withdraw");
-       System.out.println("4.Check Balance");
-       System.out.println("5.Exit");
+       
 
        boolean True=true;
 
        while(True){
+         System.out.println("\nPlease Choose One Of the Following Options :");
+         System.out.println("1.Create Account ");
+         System.out.println("2.Deposit");
+         System.out.println("3.Withdraw");
+         System.out.println("4.Check Balance");
+         System.out.println("5.Exit");
          int n=sc.nextInt();
          sc.nextLine();
             
@@ -40,14 +41,15 @@ public class Bank{
 
             while (true){
             double balance=sc.nextDouble();
+
             if(balance>=1000){
+
              Account account=new Account(accNo, balance, customer);
              info.put(accNo,account);
              System.out.println("You have created your Account ");
              System.out.println("Your account Number is: " + accNo);
              break;
-       }
-             else {
+             } else {
              System.out.println("Please Enter Minimum Amount At least");
              }
              }
