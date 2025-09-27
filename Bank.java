@@ -1,6 +1,11 @@
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IO;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
 
 public class Bank{
    static Scanner sc =new Scanner(System.in);
@@ -33,7 +38,9 @@ public class Bank{
                   String name=sc.nextLine();
                   System.out.println("Enter your Address :");
                   String address=sc.nextLine();
-                  Customer customer=new Customer(name, address);
+                  System.out.println("Enter Your Email");
+                  String email=sc.nextLine();
+                  Customer customer=new Customer(name, address,email);
                   int accNo=r.nextInt(100000,250000);
                   System.out.println("Enter Amount you want to add in Account (Minimum Rs.1000) :");
 
@@ -46,6 +53,7 @@ public class Bank{
                   info.put(accNo,account);
                   System.out.println("You have created your Account ");
                   System.out.println("Your account Number is: " + accNo);
+                  Bank.accountSave(account);
                   break;
                  }
                  else 
@@ -150,5 +158,24 @@ public class Bank{
                }
 
        }    
+    }
+    public static void accountSave(Account account){
+      try
+      {
+         FileWriter writer=new FileWriter("account.txt",true);
+      
+         writer.write("Account Number: " + account.getAccountNumber()+" \n");
+         writer.write("Account Holder Name: " + account.getCustomer().getName() + "\n");
+         writer.write("Email: " + account.getCustomer().getECmail()+"\n");
+         writer.write("Balance: " + account.getBalance());
+         writer.write("Address: " +account.getCustomer().getAddress()+"\n\n-----------------------\n");
+         writer.close();
+
+      }
+      catch(IOException e) 
+      {
+         System.out.println("Error saving account:" + e.getMessage());
+         e.printStackTrace();
+      }
     }
 }

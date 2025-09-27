@@ -3,14 +3,11 @@ public class Customer {
     private String address;
     private String email;
 
-    public Customer(String customerName,String address){
+    public Customer(String customerName,String address,String email){
         this.customerName=customerName;
         this.address=address;
- 
-    }
-
-    public void setEmail(String email){
         this.email=email;
+ 
     }
 
     public String getName(){
